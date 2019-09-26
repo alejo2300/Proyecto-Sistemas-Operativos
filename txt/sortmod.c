@@ -8,6 +8,8 @@ int main (int argc, char **argv) {
     FILE *archivo,*resultado;
     int nar;
     nar=argc-1;
+    char all[10000][100];
+    int pos=0;
     resultado = fopen(argv[nar], "a+");
     for (i=1;i<(argc-1);++i) {
         printf("El archivo a leer es : %s\n", argv[i]);
@@ -15,7 +17,10 @@ int main (int argc, char **argv) {
         while (feof(archivo) == 0) {
             if (NULL != fgets(cline, 100, archivo)) {
                 printf("%s", cline);
-                fputs( cline, resultado );
+                //fputs( cline, resultado );
+                strcpy(all[pos],cline);
+                ++pos;
+
             }
         }
         if (archivo == NULL) {
@@ -23,7 +28,27 @@ int main (int argc, char **argv) {
         }
         fclose(archivo);
     }
+    fclose(resultado);
+    printf("\n");
 
+
+    //Ordenamiento
+    char cpy[100];
+
+    for(int i=0;i<pos;i++){
+        for(int j=i;j<pos;j++){
+            if((strcmp(all[i],all[j]))>0) {
+                strcpy(cpy, all[j]);
+                strcpy(all[j],all[i]);
+                strcpy(all[i],cpy);
+            }
+            }
+        }
+
+    printf("\nValores ya ordenados:\n");
+    for(int i=0;i<pos;i++){
+        printf("%s",all[i]);
+    }
 }
 
 
