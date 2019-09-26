@@ -13,8 +13,8 @@ int main (int argc, char **argv) {
         while(!feof(archivo)){
             fgets(cline,100,archivo);
             pos++;
-            printf("%s",cline);
 
+            printf("%s",cline);
         }
         if(archivo==NULL){
             printf("Error al abrir el archivo %s\n",argv[i]);
