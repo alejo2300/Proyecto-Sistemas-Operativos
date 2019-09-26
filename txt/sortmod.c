@@ -5,19 +5,25 @@ int main (int argc, char **argv) {
 //Organizacion de archivos en un n archivo por medio de procesos
     char cline[100];
     int i;
-    FILE *archivo;
-    for (i=1;i<(argc-1);++i){
-        printf("El archivo a leer es : %s\n",argv[i]);
-        archivo=fopen(argv[i],"r");
-        while(feof(archivo)==0){
-            if(NULL!=fgets(cline,100,archivo))
-            printf("%s",cline);
+    FILE *archivo,*resultado;
+    int nar;
+    nar=argc-1;
+    resultado = fopen(argv[nar], "a+");
+    for (i=1;i<(argc-1);++i) {
+        printf("El archivo a leer es : %s\n", argv[i]);
+        archivo = fopen(argv[i], "r");
+        while (feof(archivo) == 0) {
+            if (NULL != fgets(cline, 100, archivo)) {
+                printf("%s", cline);
+                fputs( cline, resultado );
+            }
         }
-        if(archivo==NULL){
-            printf("Error al abrir el archivo %s\n",argv[i]);
+        if (archivo == NULL) {
+            printf("Error al abrir el archivo %s\n", argv[i]);
         }
-	fclose(archivo);
+        fclose(archivo);
     }
+
 }
 
 
