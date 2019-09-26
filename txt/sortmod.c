@@ -6,18 +6,14 @@ int main (int argc, char **argv) {
     char cline[100];
     int i;
     FILE *archivo,*resultado;
-    int nar;
-    nar=argc-1;
     char all[10000][100];
     int pos=0;
-    resultado = fopen(argv[nar], "a+");
     for (i=1;i<(argc-1);++i) {
         printf("El archivo a leer es : %s\n", argv[i]);
         archivo = fopen(argv[i], "r");
         while (feof(archivo) == 0) {
             if (NULL != fgets(cline, 100, archivo)) {
                 printf("%s", cline);
-                //fputs( cline, resultado );
                 strcpy(all[pos],cline);
                 ++pos;
 
@@ -28,7 +24,6 @@ int main (int argc, char **argv) {
         }
         fclose(archivo);
     }
-    fclose(resultado);
     printf("\n");
 
 
@@ -46,9 +41,16 @@ int main (int argc, char **argv) {
         }
 
     printf("\nValores ya ordenados:\n");
+    int nar;
+    nar=argc-1;
+    resultado = fopen(argv[nar], "a+");
     for(int i=0;i<pos;i++){
         printf("%s",all[i]);
+        fputs( all[i], resultado );
     }
+    fclose(resultado);
+
+
 }
 
 
