@@ -1,6 +1,6 @@
-#include<stdio.h>
-#include<stdlib.h>
-#include<string.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 int main (int argc, char **argv) {
 //Organizacion de archivos en un n archivo por medio de procesos
     char cline[100];//Var guardado linea de monento
