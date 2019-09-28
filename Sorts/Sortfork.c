@@ -7,7 +7,7 @@ int main (int argc, char **argv) {
     FILE *archivo,*resultado;//Declaracion de archivos lectura y resultado
     char all[10000][100];//Estructura de guardado de datos
     int pos=0;//Contador de datos
-    for (int i=1;i<(argc-1);++i) {//For archivos de texto
+    for (i=1;i<(argc-1);++i) {//For archivos de texto
         printf("El archivo a leer es : %s\n", argv[i]);
         archivo = fopen(argv[i], "r");
         while (feof(archivo) == 0) {
@@ -51,12 +51,3 @@ int main (int argc, char **argv) {
 
 
 }
-
-
-
-
-
-
-
-
-
