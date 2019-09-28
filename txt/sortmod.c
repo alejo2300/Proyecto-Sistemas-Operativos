@@ -14,6 +14,7 @@ int main (int argc, char **argv) {
             if (NULL != fgets(cline, 100, archivo)) {
                 printf("%s", cline);
                 strcpy(all[pos],cline);//Llevar al resultado
+                printf("Dato numero: %i\n",pos);
                 ++pos;
 
             }
