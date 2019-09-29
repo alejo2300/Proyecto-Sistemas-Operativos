@@ -1,0 +1,12 @@
+cinco 232
+cuatro 43526
+diez 7252
+doce 3432
+dos 3134
+nueve 8736
+ocho 1234
+seis 72736
+siete 3651
+tres 2342
+tres 6562
+uno 1243

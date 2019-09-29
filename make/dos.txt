@@ -1,0 +1,5 @@
+ocho 1234
+nueve 8736
+siete 3651
+doce 3432
+diez 7252

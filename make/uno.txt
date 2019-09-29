@@ -1,0 +1,7 @@
+uno 1243
+dos 3134
+tres 6562
+tres 2342
+cuatro 43526
+cinco 232
+seis 72736
